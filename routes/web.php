@@ -20,10 +20,10 @@ use Yajra\Datatables\Datatables;
 Route::middleware('NotLogin')->group(function () {
 
 Route::get('/', 'AuthController@login')->name('user.login');
-Route::get('/register', 'AuthController@register')->name('user.register');
-Route::post('/register', 'AuthController@registerStore')->name('user.register');;
+Route::get('/user-register', 'AuthController@register')->name('user.register');
+Route::post('/user-register', 'AuthController@registerStore')->name('user.register');;
 Route::get('/login', 'AuthController@login')->name('user.login');;
-Route::post('/login', 'AuthController@loginStore')->name('user.login');
+Route::post('/user-login', 'AuthController@loginStore')->name('user.login');
 
 });
 
