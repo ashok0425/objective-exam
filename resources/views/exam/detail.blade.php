@@ -98,7 +98,7 @@
             };
 
             setTimeout(() => {
-            progress(2400, 2400, $('#progressBar'));
+            progress(30000, 30000, $('#progressBar'));
                 
             }, 2000);
 
