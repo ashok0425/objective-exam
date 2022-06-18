@@ -4,7 +4,7 @@
     
     .btn_group{
         position: fixed;
-        bottom: 3%;
+        bottom: 0%;
         z-index: 999;
 width: 98%;
 left: 2%;
@@ -45,7 +45,7 @@ left: 2%;
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5 offset-md-1 " style="height: 300px;overflow-y:scroll">
+            <div class="col-md-5 offset-md-1 " style="height: 40vh;overflow-y:scroll">
 <div class="card-body ">
 
                     <div class="py-4 my-2 bg-light px-2 question cursor-pointer" >
@@ -89,7 +89,7 @@ left: 2%;
 
                     
             </div>
-            <div class="col-md-5 " style="height: 300px;overflow-y:scroll">
+            <div class="col-md-5 " style="height:40vh;overflow-y:scroll">
                 <div class="card-body ">
 
 
