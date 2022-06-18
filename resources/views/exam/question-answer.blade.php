@@ -34,8 +34,8 @@
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5" style="height: 300px;overflow:scroll">
-                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer">
+            <div class="col-md-5" >
+                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer" style="height: 200px;overflow:scroll">
                         <h6 class="m-0 font-weight-bold text-primary  ">
                             {{$question->qsn_number}}. {{$question->heading}}
                         </h6>
@@ -71,9 +71,9 @@
                     
                     
             </div>
-            <div class="col-md-5 offset-md-2" style="height: 300px;overflow:scroll">
+            <div class="col-md-5 offset-md-2">
 
-                <div class="answer mt-3">
+                <div class="answer mt-3"  style="height: 200px;overflow:scroll">
                     @php
                         $ans1=$question;
                     @endphp
