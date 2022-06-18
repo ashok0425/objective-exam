@@ -158,7 +158,7 @@
 
 
          // loading data after loading page 
-            $(window).on('load',function(){
+            // $(window).on('load',function(){
          <?php
          session()->forget('answers');
          session()->forget('questions');
@@ -177,7 +177,7 @@
              })
 
 
-        })
+        // })
 
 
 // loading all question 

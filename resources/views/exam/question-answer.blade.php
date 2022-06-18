@@ -226,7 +226,7 @@ left: 2%;
 
         {{-- btn group  --}}
         <div class="btn_group">
-            <div class="card pl-3 pb-2">
+            <div class="card pl-3 ">
     <div class="row mt-4 ">
         <div class="col-md-2 my-1 col-3">
                 
