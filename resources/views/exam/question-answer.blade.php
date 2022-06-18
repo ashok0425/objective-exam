@@ -45,7 +45,7 @@ left: 2%;
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5 offset-md-1 " style="height: 40vh;overflow-y:scroll">
+            <div class="col-md-5 offset-md-1 " style="height: 48vh;overflow-y:scroll">
 <div class="card-body ">
 
                     <div class="py-4 my-2 bg-light px-2 question cursor-pointer" >
@@ -70,7 +70,7 @@ left: 2%;
                             
                     
                            @if (str_contains($question->questionfile,'.png')||str_contains($question->questionfile,'.jpg')||str_contains($question->questionfile,'.jpeg')||str_contains($question->questionfile,'.gig')||str_contains($question->questionfile,'.pdf')||str_contains($question->questionfile,'.JPEG')||str_contains($question->questionfile,'.JPG'))
-                           <img src="{{$question->questionfile}}" alt="image" class="img-fluid" >
+                           <img src="{{$question->questionfile}}" alt="image" class="img-fluid" width="180">
                            <br>
 
                            @endif
@@ -89,7 +89,7 @@ left: 2%;
 
                     
             </div>
-            <div class="col-md-5 " style="height:40vh;overflow-y:scroll">
+            <div class="col-md-5 " style="height:48vh;overflow-y:scroll">
                 <div class="card-body ">
 
 
@@ -236,7 +236,7 @@ left: 2%;
             @endif
             " data-exam_id="{{$question->exam_id}}" data-qns_id="{{$question->qsn_number}}"> <i class="fas fa-backward "></i> Prev </button>
         </div>
-        <div class="col-md-4 offset-md-2 my-1 col-6">
+        <div class="col-md-4 offset-md-2 my-1 col-6 text-center">
             <button class="btn btn-primary back_top_question_list"><i class="fab fa-windows "></i> Total Question 40</button>
         </div>
         <div class="col-md-2 offset-md-2 my-1 col-3">
@@ -269,9 +269,9 @@ left: 2%;
                     data:{eid:eid,qid:qid,aid:aid},
                     type:'GET',
                     success:function(res){
-                        $('#total_question').html(40)
-            $('#solved_question').html(40-res)
-            $('#remaining_question').html(res)
+                        $('.total_question').html(40)
+            $('.solved_question').html(res)
+            $('.remaining_question').html(40-res)
 
                     }
                 })

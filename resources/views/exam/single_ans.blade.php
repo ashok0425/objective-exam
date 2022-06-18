@@ -28,6 +28,8 @@
                 }
      }else{
         $correct=$ans1->answer;
+        $wrong=888;
+
 
      }
          
@@ -141,5 +143,17 @@
             
                     </div>
 
+
+                    @if ($wrong==0)
+                    <strong style="color: green">Solved & Correct</strong>
+
+                        
+                    @elseif ($wrong==888)
+                    <strong style="color: red">Unsolved</strong>
+
+                    @else    
+                    <strong style="color: red">Solved but Wrong</strong>
+
+                    @endif
 
 

@@ -28,11 +28,6 @@
 }
 
 
-
-
-
-
-
          .sidebar{
         display: none!important;
     }
@@ -58,45 +53,125 @@
     </style>
 
 <div class="whole_page">
-
+<div class="container-fluid">
     <div class="row mb-3">
-        <div class="col-md-10 offset-md-1">
+<div class="col-md-1 text-center">
+<img src="{{asset('user.webp')}}" alt="{{session()->get('user')->first_name}}" class="img-fluid" width="100" height="100" style="border-radius: 50%">
+</div>
+        <div class="col-md-11  ">
             <div class="card">
 
-                <div class="card-body py-0 ">
-                    <div class="all_qns">
-                    <div class="row border-bottom py-2 ">
-                        <div class="col-md-4 text-center">lorem 40 ipsum</div>
-                        <div class="col-md-4 text-center">{{session()->get('exam_name')}}</div>
-                        <div class="col-md-4 text-center">Name: {{session()->get('user')->first_name . session()->get('user')->last_name}}</div>
+                <div class="card-body py-0">
+
+
+
+                  <div class="detail_qns d-none">
+                    <div class="row  ">
+
+                      <div class="col-md-6 text-center ">
+
+                      </div>
+                        <div class="col-md-2 text-center border-left border-bottom px-0 mx-0">
+
+                          <div class="py-2 ">Total Question &nbsp;
+                            <p  class="total_question d-block d-md-none">0</p>
+
+                          </div>
+                        </div>
+                        <div class="col-md-2 text-center border-left border-bottom  px-0 mx-0">
+                          <div class="py-2">
+                            Remaining Question &nbsp;
+   <strong class="remaining_question d-block d-md-none">0</strong>
+
+                          </div>
+
+                        </div>
+                        <div class="col-md-2 text-center border-left d-none d-md-block border-bottom px-0 mx-0">
+                          <div class="py-2">
+                            Time
+                          </div>
+                        </div>
         
                     </div>
                 </div>
 
-                    <div class="row py-2 ">
-                        <div class="col-md-4 text-center all_qns">{{session()->get('user')->exam_type}} test room {{rand(1,10)}}</div>
-                        
-                        <div class="col-md-4 text-center d-none detail_qns">{{session()->get('exam_name')}}</div>
 
-                        <div class="col-md-2 text-center border-left">
-                
-                                    Total Question
-                                  <span id="total_question"> 40</span> 
-                        </div>
-                        <div class="col-md-2 text-center border-left ">
+                    <div class="all_qns">
+                    <div class="row border-bottom  ">
+                        <div class="col-md-4 text-center">
 
-                            Solved Question
-                            <span id="solved_question">  0</span>
+                          <div class="py-2">lorem 40 ipsum</div>
                         </div>
-                        <div class="col-md-2 text-center border-left">
-                            Unsolved Question
-                            <span id="remaining_question">  0</span>
+                        <div class="col-md-4 text-center">
+                          <div class="py-2">
+                          {{session()->get('exam_name')}}
+                          </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                          <div class="py-2">
+                          Name :{{session()->get('user')->first_name . session()->get('user')->last_name}}
+                          </div>
+                        </div>
+        
+                    </div>
+                </div>
+
+                    <div class="row  ">
+
+                      <div class="col-md-6 d-none text-center detail_qns mt-3 mt-md-0">
+                        <div class="" style="margin-top: -10px">
+                          {{session()->get('user')->exam_type}} Test  {{rand(1,10)}}
                         
                         </div>
-                        <div class="col-md-2 text-center border-left">  
+
+                      </div>
+                        <div class="col-md-4 text-center all_qns   py-0 my-0">
+                          <div class="py-2">
+                          {{session()->get('user')->exam_type}} test room {{rand(1,10)}}
+                          </div>
+                        </div>
+                        
+                      
+                        <div class="col-md-2 text-center border-left detail_qns d-none py-0 my-0">
+                          <div class="py-2 d-none d-md-block">
+                                   <span class="total_question">40</span> 
+                          </div>
+                        </div>
+                      
+                        <div class="col-md-2 text-center border-left detail_qns d-none py-0 my-0">
+                          <div class="py-2  d-none d-md-block">
+                            <span class="remaining_question">0</span>
+                          </div>
+                        
+                        </div>
+
+
+
+
+
+
+                        <div class="col-md-2 text-center border-left all_qns  py-0 my-0">
+                          <div class="py-2">
+                                    Total Question :<span class="total_question">40</span> 
+                          </div>
+                        </div>
+                        <div class="col-md-2 text-center border-left all_qns  py-0 my-0">
+                          <div class="py-2">
+                            Solved Question :<span class="solved_question">0</span>
+                          </div>
+                        </div>
+                        <div class="col-md-2 text-center border-left all_qns  py-0 my-0">
+                          <div class="py-2">
+                            Unsolved Question :<span class="remaining_question">0</span>
+                          </div>
+                        
+                        </div>
+                        <div class="col-md-2 text-center border-left   py-0 my-0"> 
+                          <div class="py-2"> 
                              <div class="progressBar">
                             <div class="bar"></div>
                         </div>
+                      </div>
          </div>
 
         
@@ -105,7 +180,7 @@
             </div>
         </div>
     </div>
-
+  </div>
 
     <div class="all_question py-2">
         
@@ -131,10 +206,19 @@
                 }, 500).html(Math.floor(timeleft / 60) + ":" + timeleft % 60);
                 if (timeleft > 0) {
                     setTimeout(function() {
+                      if(timeleft==300){
+                        alert('Only 5 minutes left')
+                      }
+
+                      if(timeleft==600){
+                        alert('Only 10 minutes left')
+                      }
                         progress(timeleft - 1, timetotal, $element);
                     }, 1000);
                 }
             };
+
+            
             setTimeout(() => {
             progress(3000, 3000, $('.progressBar'));
                 
@@ -301,18 +385,6 @@ $('.detail_qns').addClass('d-block')
     });
  
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
