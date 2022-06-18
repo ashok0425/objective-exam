@@ -86,6 +86,9 @@
                     dataType:'html',
                     data:{eid:eid,qid:qid},
                     type:'GET',
+                    beforeSend:function(){
+                        $('.answer').html('<div class="text-center"><div class="spinner-border" role="status">  <span class="sr-only">Loading...</span></div></div>')
+                    },
                     success:function(res){
                         $('.answer').html(res)
                     }
