@@ -63,7 +63,7 @@ if($res->status){
         'alert-type'=>'success',
          'content'=>'successfully register'
     ];
-    return redirect()->route('user.login')->with('message',$message);
+    return redirect()->route('user.logins')->with('message',$message);
 
 }else{
     $message=[

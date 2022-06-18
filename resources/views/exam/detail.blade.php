@@ -32,7 +32,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-md-3">
-                    <h6 class="m-0 font-weight-bold text-primary pt-2 ">{{ $exam_name }}</h6>
+                    <h6 class="m-0 font-weight-bold text-primary pt-2 text-center text-md-left">{{ $exam_name }}</h6>
 
                 </div>
                 <div class="col-md-3">

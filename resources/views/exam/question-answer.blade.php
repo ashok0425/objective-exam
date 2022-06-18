@@ -205,7 +205,7 @@
 
         {{-- btn group  --}}
     <div class="row mt-4">
-        <div class="col-md-2">
+        <div class="col-md-2 my-1 col-3">
                 
             <button class="btn btn-primary go_prev 
             @if ($question->qsn_number==1)
@@ -215,10 +215,10 @@
             " data-exam_id="{{$question->exam_id}}" data-qns_id="{{$question->qsn_number}}"> <i class="fas fa-backward "></i> Prev </button>
 
         </div>
-        <div class="col-md-4 offset-md-2">
+        <div class="col-md-4 offset-md-2 my-1 col-6">
             <button class="btn btn-primary back_top_question_list"><i class="fab fa-windows "></i> Total Question 40</button>
         </div>
-        <div class="col-md-2 offset-md-2">
+        <div class="col-md-2 offset-md-2 my-1 col-3">
 
             <button class="btn btn-primary go_next 
               @if ($question->qsn_number==40)

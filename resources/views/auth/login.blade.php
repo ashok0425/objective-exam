@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <section>
-
+<div class="container-fluid">
   <hgroup>
       <h2>Welcome back!</h2>
       {{-- <p>Please enter your details to sign into your account</p> --}}
@@ -54,7 +54,7 @@
 
   </form>
 
-  
+</div>
 
 </section>
 @endsection

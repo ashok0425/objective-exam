@@ -5,7 +5,7 @@
 @section('content')
     <section>
 
-
+<div class="container-fluid">
 
         <form method="post" class="log-form" action="{{ route('user.register') }}">
             @if ($errors->any())
@@ -73,7 +73,7 @@
             <p class="text-center">Already have an Account.Sign In <a href="{{ route('user.login') }}">here</a></p>
 
         </form>
-
+    </div>
 
 
     </section>

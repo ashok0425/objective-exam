@@ -2,7 +2,6 @@
 
 @section('content')
     {{-- {{dd()}} --}}
-    <div class="container">
         <div class="alert alert-success">
             Login Successfull
         </div>
@@ -11,7 +10,7 @@
                     @php
                         $user = session()->get('user');
                     @endphp
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-12">
                      <div class="card">
                         <div class="card-header">
                     <h6 class="m-0 font-weight-bold text-primary pt-2 ">Profile Detail</h6>
@@ -53,5 +52,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection
