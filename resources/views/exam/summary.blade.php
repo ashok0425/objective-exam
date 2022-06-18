@@ -1,4 +1,8 @@
-
+<style>
+    .navbar-nav{
+        display: none!important;
+    }
+</style>
    <div class="row">
     <div class="col-md-6 offset-md-3">
         <div class="card">

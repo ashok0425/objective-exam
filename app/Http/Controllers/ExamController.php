@@ -65,6 +65,8 @@ class ExamController extends Controller
   $ex_type = $user->exam_type == 'CBT' ? 2 : 1;
     $exam_name =Request()->segment(3);
     session()->put('allquestion',['category_id'=>$ex_type,'exam_id'=>$id]);
+    session()->put('exam_name',$exam_name);
+
     return view('exam.detail', compact('exam_name'));
 
 

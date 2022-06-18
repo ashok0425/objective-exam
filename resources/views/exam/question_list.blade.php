@@ -1,9 +1,13 @@
 
 
 <div class="container-fluid">
+    
+    
     <div class="row">
 
-        <div class="col-md-5">
+
+        <div class="col-md-6 ">
+            <div class="card">
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-6">
@@ -20,11 +24,12 @@
     </div>
     </div>
             </div>
+            <div class="card-body">
             
             <div class="row">
                 {{-- {{ dd() }} --}}
                     @for ($i =0 ; $i <20 ; $i++)
-                        <div class="col-md-3 col-4 my-1">
+                        <div class="col-md-2 col-4 my-1">
                             
                           
                             <h6 data-exam_id="{{$questions[$i]->exam_id}}" data-qns_id="{{$questions[$i]->qsn_number}}" class="text-decoration-none cursor-pointer load-question  
@@ -43,11 +48,13 @@
 
             </div>
         </div>
+    </div>
+</div>
 
 
 
-
-        <div class="col-md-5 offset-md-1">
+        <div class="col-md-6 ">
+            <div class="card">
 
 
             <div class="card-header">
@@ -68,11 +75,12 @@
             </div>
 
 
+            <div class="card-body">
 
             <div class="row">
                 {{-- {{ dd() }} --}}
                     @for ($i =20 ; $i <40 ; $i++)
-                        <div class="col-md-3 col-4 my-1">
+                        <div class="col-md-2 col-4 my-1">
                             <h6 data-exam_id="{{$questions[$i]->exam_id}}" data-qns_id="{{$questions[$i]->qsn_number}}" class="text-decoration-none cursor-pointer load-question  
                                 @if (session()->has('questions'))
                             @if (in_array($questions[$i]->qsn_number,session()->get('questions')))
@@ -88,6 +96,9 @@
                     @endfor
 
             </div>
+        </div>
+    </div>
+
             <div class="row mt-2">
                 <div class="col-md-6 offset-md-6">
                     <button class="btn btn-primary submit-ans">Submit Answer <i class="fas fa-paper-plane"></i></button>

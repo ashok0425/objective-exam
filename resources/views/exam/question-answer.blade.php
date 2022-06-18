@@ -1,5 +1,14 @@
+
+
 <style>
     
+    .btn_group{
+        position: fixed;
+        bottom: 3%;
+        z-index: 999;
+width: 98%;
+left: 2%;
+    }
     .cursor-pointer{
         cursor: pointer;
     }
@@ -29,13 +38,17 @@
   
 </style>
 
+<div class="card">
+
 
 
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5" >
-                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer" style="height: 100px;overflow:scroll">
+            <div class="col-md-5 offset-md-1 " style="height: 300px;overflow-y:scroll">
+<div class="card-body ">
+
+                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer" >
                         <h6 class="m-0 font-weight-bold text-primary  ">
                             {{$question->qsn_number}}. {{$question->heading}}
                         </h6>
@@ -58,22 +71,29 @@
                     
                            @if (str_contains($question->questionfile,'.png')||str_contains($question->questionfile,'.jpg')||str_contains($question->questionfile,'.jpeg')||str_contains($question->questionfile,'.gig')||str_contains($question->questionfile,'.pdf')||str_contains($question->questionfile,'.JPEG')||str_contains($question->questionfile,'.JPG'))
                            <img src="{{$question->questionfile}}" alt="image" class="img-fluid" >
+                           <br>
+
                            @endif
                     
                            @if (str_contains($question->qsnAudiofile,'.mp3')||str_contains($question->qsnAudiofile,'.mp4')||str_contains($question->qsnAudiofile,'.audio'))
                            <br>
-                           <button class="play mt-1 btn btn-primary px-5 py-2" data-src="{{$question->qsnAudiofile}}" data-id="{{$question->qsn_number}}">
-                            <i class="fa fa-play"> </i>
-                           </button>
+
+                           <span class="play mt-1  px-5 py-2 cursor-pointer" data-src="{{$question->qsnAudiofile}}" data-id="{{$question->qsn_number}}">
+                            <i class="fa fa-headphones"> </i>
+                           </span>
                                
                                     @endif 
                     </div>
                     
+                </div>
+
                     
             </div>
-            <div class="col-md-5 offset-md-2">
+            <div class="col-md-5 " style="height: 300px;overflow-y:scroll">
+                <div class="card-body ">
 
-                <div class="answer mt-3"  style="height: 100px;overflow:scroll">
+
+                <div class="answer mt-3"  >
                     @php
                         $ans1=$question;
                     @endphp
@@ -199,12 +219,15 @@
             
             
                    </div>
-            </div>
+                </div>
+
 
         </div>
 
         {{-- btn group  --}}
-    <div class="row mt-4">
+        <div class="btn_group">
+            <div class="card pl-3 pb-2">
+    <div class="row mt-4 ">
         <div class="col-md-2 my-1 col-3">
                 
             <button class="btn btn-primary go_prev 
@@ -225,8 +248,11 @@
             " data-exam_id="{{$question->exam_id}}" data-qns_id="{{$question->qsn_number}}">Next <i class="fas fa-forward "></i></button>
 
         </div>
-
     </div>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -243,8 +269,10 @@
                     data:{eid:eid,qid:qid,aid:aid},
                     type:'GET',
                     success:function(res){
-                        $('#total_question').html(40-res)
+                        $('#total_question').html(40)
+            $('#solved_question').html(40-res)
             $('#remaining_question').html(res)
+
                     }
                 })
 

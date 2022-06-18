@@ -1,4 +1,5 @@
 <style>
+   
     .bg-success{
         background:green!important;
     }
@@ -25,6 +26,9 @@
                     }
     
                 }
+     }else{
+        $correct=$ans1->answer;
+
      }
          
        
@@ -47,7 +51,7 @@
                 {{$ans1->option1}}
         @endif
         @if (str_contains($ans1->image1,'.png')||str_contains($ans1->image1,'.jpg')||str_contains($ans1->image1,'.jpeg')||str_contains($ans1->image1,'.gig')||str_contains($ans1->image1,'.pdf')||str_contains($ans1->image1,'.JPEG')||str_contains($ans1->image1,'.JPG'))
-        <img src="{{$ans1->image1}}" alt="image" class="img-fluid" >
+        <img src="{{$ans1->image1}}" alt="image" class="img-fluid" width="100" width="100">
         @endif
  
         @if (str_contains($ans1->image1,'.mp3')||str_contains($ans1->image1,'.mp4')||str_contains($ans1->image1,'.audio'))
@@ -72,7 +76,7 @@
                     {{$ans1->option2}}
             @endif
             @if (str_contains($ans1->image2,'.png')||str_contains($ans1->image2,'.jpg')||str_contains($ans1->image2,'.jpeg')||str_contains($ans1->image2,'.gig')||str_contains($ans1->image2,'.pdf')||str_contains($ans1->image2,'.JPEG')||str_contains($ans1->image2,'.JPG'))
-            <img src="{{$ans1->image2}}" alt="image" class="img-fluid" >
+            <img src="{{$ans1->image2}}" alt="image" class="img-fluid" width="100" >
             @endif
      
             @if (str_contains($ans1->image2,'.mp3')||str_contains($ans1->image2,'.mp4')||str_contains($ans1->image2,'.audio'))
@@ -99,7 +103,7 @@
                         {{$ans1->option3}}
                 @endif
                 @if (str_contains($ans1->image3,'.png')||str_contains($ans1->image3,'.jpg')||str_contains($ans1->image3,'.jpeg')||str_contains($ans1->image1,'.gig')||str_contains($ans1->image3,'.pdf')||str_contains($ans1->image3,'.JPEG')||str_contains($ans1->image3,'.JPG'))
-                <img src="{{$ans1->image3}}" alt="image" class="img-fluid" >
+                <img src="{{$ans1->image3}}" alt="image" class="img-fluid" width="100" >
                 @endif
          
                 @if (str_contains($ans1->image3,'.mp3')||str_contains($ans1->image3,'.mp4')||str_contains($ans1->image3,'.audio'))
@@ -127,7 +131,7 @@
                             {{$ans1->option4}}
                     @endif
                     @if (str_contains($ans1->image4,'.png')||str_contains($ans1->image4,'.jpg')||str_contains($ans1->image4,'.jpeg')||str_contains($ans1->image4,'.gig')||str_contains($ans1->image4,'.pdf')||str_contains($ans1->image4,'.JPEG')||str_contains($ans1->image4,'.JPG'))
-                    <img src="{{$ans1->image4}}" alt="image" class="img-fluid" >
+                    <img src="{{$ans1->image4}}" alt="image" class="img-fluid" width="100" >
                     @endif
              
                     @if (str_contains($ans1->image4,'.mp3')||str_contains($ans1->image4,'.mp4')||str_contains($ans1->image4,'.audio'))
