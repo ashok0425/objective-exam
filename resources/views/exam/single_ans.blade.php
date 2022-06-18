@@ -25,11 +25,12 @@
     
                     }
     
+                }else{
+                    $wrong=888;
+
                 }
      }else{
         $correct=$ans1->answer;
-        $wrong=888;
-
 
      }
          
@@ -152,7 +153,7 @@
                     <strong style="color: red">Unsolved</strong>
 
                     @else    
-                    <strong style="color: red">Solved but Wrong</strong>
+                    <strong style="color: red">Solved but incorrect </strong>
 
                     @endif
 
