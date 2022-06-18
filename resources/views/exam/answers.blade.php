@@ -17,7 +17,7 @@
             </h6>
         </div>
         <div class="row">
-            <div class="col-md-6" style="height: 450px;overflow:scroll">
+            <div class="col-md-6" style="height: 400px;overflow:scroll">
 @foreach ($questions as $key=> $question)
 <div class="py-4 my-2 bg-light px-2 click_question cursor-pointer" data-qid="{{$question->qsn_number}}"
     <h6 class="m-0 font-weight-bold text-primary ">
@@ -53,7 +53,7 @@
   </div>
 
             {{-- answer sectioon  --}}
-            <div class="col-md-6" style="height: 450px;overflow:scroll">
+            <div class="col-md-6" style="height: 400px;overflow:scroll">
 <div class="answer mt-3">
 </div>
 

@@ -34,7 +34,7 @@
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-5" style="height: 300px;overflow:scroll">
                     <div class="py-4 my-2 bg-light px-2 question cursor-pointer">
                         <h6 class="m-0 font-weight-bold text-primary  ">
                             {{$question->qsn_number}}. {{$question->heading}}
@@ -63,7 +63,7 @@
                            @if (str_contains($question->qsnAudiofile,'.mp3')||str_contains($question->qsnAudiofile,'.mp4')||str_contains($question->qsnAudiofile,'.audio'))
                            <br>
                            <button class="play mt-1 btn btn-primary px-5 py-2" data-src="{{$question->qsnAudiofile}}" data-id="{{$question->qsn_number}}">
-                            <i class="fa fa-play"> Audio Clip</i>
+                            <i class="fa fa-play"> </i>
                            </button>
                                
                                     @endif 
@@ -71,7 +71,7 @@
                     
                     
             </div>
-            <div class="col-md-5 offset-md-2">
+            <div class="col-md-5 offset-md-2" style="height: 300px;overflow:scroll">
 
                 <div class="answer mt-3">
                     @php
@@ -211,9 +211,7 @@
             @if ($question->qsn_number==1)
             d-none
             @endif
-
             " data-exam_id="{{$question->exam_id}}" data-qns_id="{{$question->qsn_number}}"> <i class="fas fa-backward "></i> Prev </button>
-
         </div>
         <div class="col-md-4 offset-md-2 my-1 col-6">
             <button class="btn btn-primary back_top_question_list"><i class="fab fa-windows "></i> Total Question 40</button>
