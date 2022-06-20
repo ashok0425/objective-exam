@@ -35,7 +35,14 @@ left: 2%;
     color: #fff;
 
   }
-  
+  .min_height{
+    height: 58vh;
+  }
+  @media only screen and (max-width: 600px) {
+    .min_height{
+    height: 48vh!important;
+  } 
+  }
 </style>
 
 <div class="card">
@@ -45,7 +52,7 @@ left: 2%;
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5 offset-md-1 " style="height: 48vh;overflow-y:scroll">
+            <div class="col-md-5 offset-md-1 min_height" >
 <div class="card-body ">
 
                     <div class="py-4 my-2 bg-light px-2 question cursor-pointer" >
@@ -89,7 +96,7 @@ left: 2%;
 
                     
             </div>
-            <div class="col-md-5 " style="height:48vh;overflow-y:scroll">
+            <div class="col-md-5 min_height">
                 <div class="card-body ">
 
 

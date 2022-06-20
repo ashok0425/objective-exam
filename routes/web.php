@@ -43,6 +43,8 @@ Route::get('/submit-ans', 'ExamController@submitAns');
 Route::get('/qsn-visited', 'ExamController@qsnVisisted');
 Route::get('/view-ans', 'ExamController@viewAns');
 Route::get('/single-ans', 'ExamController@SingleAns');
+Route::get('/save-exam', 'ExamController@saveExam');
+
 
 });
 

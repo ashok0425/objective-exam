@@ -10,6 +10,8 @@ class ExamController extends Controller
 
 
 
+
+
     public function index()
     {
 
@@ -229,7 +231,20 @@ return count(session()->get('questions'));
                 }
             }
         }
-       
+        $not=(int)count($questions)-count($attempt_question);
+        $data=[
+            "student_id"=> session()->get('user')->id,
+            "exam_id"=>$exam_id,
+            "total_qsn"=> count($questions),
+            "correct_ans"=> $suc_att ,
+            "wrong_ans"=> $att,
+            "not_ans"=>$not 
+        ];
+     
+
+     $this->saveExam(new Request($data));
+
+
         return view('exam.summary',compact('att','suc_att'));
   
     }
@@ -317,4 +332,41 @@ public function SingleAns(Request $request){
     }
     
 
+    public function saveExam(Request $request){
+
+    
+$url = "https://hangukapi.nitlegend.com/login/result_submitdb";
+
+$curl = curl_init($url);
+curl_setopt($curl, CURLOPT_URL, $url);
+curl_setopt($curl, CURLOPT_POST, true);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+$headers = array(
+   "Authorization: Bearer 393|woEcPMnz2ycSaX6amRu1LppexklHP3nEIUZ8veKh",
+   "Content-Type: application/json",
+);
+curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+$data = <<<DATA
+{
+  "student_id": $request->student_id,
+  "exam_id": $request->exam_id,
+  "total_qsn": $request->total_qns,
+  "correct_ans": $request->correct_ans ,
+  "wrong_ans": $request->wrong_ans,
+  "not_ans": $request->not_ans 
+}
+DATA;
+
+curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+$resp = curl_exec($curl);
+curl_close($curl);
+        
+        }
 }
