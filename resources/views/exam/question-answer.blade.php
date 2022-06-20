@@ -36,11 +36,14 @@ left: 2%;
 
   }
   .min_height{
-    height: 58vh;
+    height: 43vh;
+    overflow-y: scroll
   }
   @media only screen and (max-width: 600px) {
     .min_height{
-    height: 48vh!important;
+    height: 43vh!important;
+    overflow-y: scroll
+
   } 
   }
 </style>
@@ -52,10 +55,11 @@ left: 2%;
 <input type="hidden" value="{{$question->qsn_number}}" id="qsn_visited">
        
         <div class="row">
-            <div class="col-md-5 offset-md-1 min_height" >
+            <div class="col-md-5 offset-md-1 py-5" >
+                    <div class="min_height">
 <div class="card-body ">
 
-                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer" >
+                    <div class="py-4 my-2 bg-light px-2 question cursor-pointer " >
                         <h6 class="m-0 font-weight-bold text-primary  ">
                             {{$question->qsn_number}}. {{$question->heading}}
                         </h6>
@@ -91,16 +95,18 @@ left: 2%;
                                
                                     @endif 
                     </div>
-                    
                 </div>
+            </div>
+
 
                     
             </div>
-            <div class="col-md-5 min_height">
+            <div class="col-md-5 py-5">
+<div class="min_height">
+
                 <div class="card-body ">
 
-
-                <div class="answer mt-3"  >
+                <div class="answer mt-3 "  >
                     @php
                         $ans1=$question;
                     @endphp
@@ -226,6 +232,7 @@ left: 2%;
             
             
                    </div>
+                </div>
                 </div>
 
 
