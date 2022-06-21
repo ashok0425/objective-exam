@@ -194,9 +194,11 @@
     </div>
 
         <script>
-  
+window.addEventListener("beforeunload", function(event) {
+  console.log('first')
 
 
+});
             $(document).ready(function(){
 
             function progress(timeleft, timetotal, $element) {

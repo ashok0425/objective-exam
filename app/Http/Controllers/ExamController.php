@@ -231,7 +231,13 @@ return count(session()->get('questions'));
                 }
             }
         }
-        $not=(int)count($questions)-count($attempt_question);
+        if($attempt_question!=null){
+            $not=count($questions)-count($attempt_question);
+
+        }else{
+            $not=count($questions)-0;
+
+        }
         $data=[
             "student_id"=> session()->get('user')->id,
             "exam_id"=>$exam_id,
