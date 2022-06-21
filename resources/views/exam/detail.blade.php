@@ -195,8 +195,8 @@
 
         <script>
 window.addEventListener("beforeunload", function(event) {
-  console.log('first')
-
+  e.preventDefault();
+  return event.returnValue = "Are you sure you want to exit? All the data will be rest.";
 
 });
             $(document).ready(function(){
